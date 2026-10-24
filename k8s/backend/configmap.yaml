@@ -6,4 +6,4 @@ metadata:
 data:
   PGHOST: database
   PGPORT: "5432"
-  PORT: "3000"
+  PORT: "5000"

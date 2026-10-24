@@ -33,7 +33,7 @@ async function init() {
       return;
     } catch (err) {
       console.log("waiting for database:", err.message);
-      await new Promise((r) => setTimeout(r, 3000));
+      await new Promise((r) => setTimeout(r, 5000));
     }
   }
   throw new Error("database not reachable");
@@ -71,7 +71,7 @@ app.post("/api/messages", async (req, res) => {
   }
 });
 
-const PORT = Number(process.env.PORT || 3000);
+const PORT = Number(process.env.PORT || 5000);
 
 init()
   .then(() => {

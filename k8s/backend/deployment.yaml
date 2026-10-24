@@ -22,7 +22,7 @@ spec:
           image: guestbook-backend:1.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 3000
+            - containerPort: 5000
           envFrom:
             - configMapRef:
                 name: backend-config
@@ -45,13 +45,13 @@ spec:
           readinessProbe:
             httpGet:
               path: /api/health
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 5
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /api/health
-              port: 3000
+              port: 5000
             initialDelaySeconds: 10
             periodSeconds: 10
           resources:

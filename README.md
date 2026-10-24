@@ -64,7 +64,7 @@ kubectl delete -k k8s/
 
 ## Teaching hooks (what to demo)
 - **Pods & replicas:** `kubectl get pods -n guestbook -o wide` — 2 frontend, 2 backend, 1 db, each with its own IP.
-- **Services & DNS:** the frontend reaches the backend at `http://backend:3000`; the backend reaches Postgres at `database:5432` — by Service name.
+- **Services & DNS:** the frontend reaches the backend at `http://backend:5000`; the backend reaches Postgres at `database:5432` — by Service name.
 - **Config vs secrets:** `backend-config` (ConfigMap) holds non-secret settings; `db-credentials` (Secret) holds the password.
 - **Storage:** delete the db pod — data survives because of the PVC.
 - **Self-healing:** `kubectl delete pod -l app=backend -n guestbook` → the Deployment recreates it.
