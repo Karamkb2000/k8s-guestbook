@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366f1" />
+    <title>Guestbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </span>
+        Guestbook
+      </div>
+      <span id="status" class="badge badge-off">
+        <span class="badge-dot"></span>
+        <span id="status-text">connecting…</span>
+      </span>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Sign the guestbook</h1>
+        <p>Leave a message — it travels from this page to the API to the database and back.</p>
+      </section>
+
+      <section class="card compose">
+        <form id="form">
+          <div class="row">
+            <input id="author" type="text" placeholder="Your name (optional)" autocomplete="off" maxlength="40" />
+          </div>
+          <div class="row">
+            <textarea id="text" placeholder="Write something nice…" rows="2" maxlength="280" required></textarea>
+          </div>
+          <div class="compose-footer">
+            <span id="count" class="count">0 / 280</span>
+            <button type="submit" class="btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Post message
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <div class="feed-head">
+        <h2>Messages</h2>
+        <span id="served-by" class="served-by"></span>
+      </div>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+    </main>
+
+    <div id="toasts" class="toasts"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
